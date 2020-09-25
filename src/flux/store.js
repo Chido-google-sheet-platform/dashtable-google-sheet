@@ -8,24 +8,6 @@ let _store = {
   menuVisible: false,
   navItems: getSidebarNavItems()
 };
-
-class Store extends EventEmitter {
-  constructor() {
-    super();
-
-    this.registerToActions = this.registerToActions.bind(this);
-    this.toggleSidebar = this.toggleSidebar.bind(this);
-
-    Dispatcher.register(this.registerToActions.bind(this));
-  }
-
-  registerToActions({ actionType, payload }) {
-    switch (actionType) {
-      case Constants.TOGGLE_SIDEBAR:
-        this.toggleSidebar();
-        break;
-      default:
-    }
   }
 
   toggleSidebar() {
